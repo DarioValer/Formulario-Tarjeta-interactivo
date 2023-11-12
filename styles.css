@@ -2,6 +2,15 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0; 
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: hsl(278, 68%, 11%);
+    letter-spacing: 1.2px;
+}
+
+body{
+    background-color: hsl(0, 0%, 100%);
 }
 
 .attribution { 
@@ -14,6 +23,8 @@
 .bg-main-mobile{
     height: 12%;
     width: 100%;
+    z-index: 1;
+    position: relative;
 }
 
 .bg-main-desktop{
@@ -22,19 +33,120 @@
 
 .bg-card-back{
     width: 80%;
-    position: relative;
-    top: 0px;
+    position: absolute;
+    top: 25px;
+    right: 12px;
+    z-index: 2;
 }
 
 .bg-card-front{
     width: 80%;
-    position: relative;
+    position: absolute;
+    z-index: 10;
+    top: 104px;
+    left: 10px;
+}
+
+.bg-card-front img{
+    width: 100%;
+    height: 100%;
+}
+
+.icono{
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    z-index: 10;
+}
+
+.number-front-card{
+    position: absolute;
+    top: 85px;
+    left: 20px;
+    font-size: 20px;
+    color: hsl(270, 3%, 87%);
+    width: 100%;
+    /*letter-spacing: 1px;*/
+}
+
+.name-front-card{
+    position: absolute;
+    color: hsl(270, 3%, 87%);
+    bottom: 20px;
+    left: 20px;
+    font-size: 11px;
+}
+
+.exp-date-front-card{
+    position: absolute;
+    color: hsl(270, 3%, 87%);
+    bottom: 20px;
+    right: 20px;
+    font-size: 12px;
+}
+
+
+.campo{
+    margin: 20% 6% 5% 6%;
+    
 }
 
 .block{
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.block input{
+
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: hsl(270, 3%, 87%);
+
+}
+
+.date-cvc{
+    display: flex;
+}
+
+.exp-date{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.mm-yy{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.mm-yy input{
+    width: 50%;
+    margin: 5px;
+}
+
+.cvc {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.cvc input{
+    width: 100%;
+}
+
+
+
+.button{
+    border: none;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 10px;
+    color: hsl(270, 3%, 87%);
+    background-color: hsl(278, 68%, 11%);
 }
 
 @media(min-width : 1024px){
