@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0; 
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
     color: hsl(278, 68%, 11%);
     letter-spacing: 1.2px;
@@ -21,8 +21,7 @@ body{
 }
 
 .bg-main-mobile{
-    height: 12%;
-    width: 100%;
+    width: 100%;  
     z-index: 1;
     position: relative;
 }
@@ -31,63 +30,75 @@ body{
     display: none;
 }
 
-.bg-card-back{
-    width: 80%;
+.card-back{
+    width: 290px;
+    height: 160px;
     position: absolute;
-    top: 25px;
-    right: 12px;
+    top: 35px;
+    right: 15px;
     z-index: 2;
+    background-image: url("images/bg-card-back.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-.bg-card-front{
-    width: 80%;
+.cvc-back-card {
+    position: absolute;
+    top: 72px;
+    right: 35px;
+    font-size: 9px;
+    color: hsl(270, 3%, 87%);
+}
+
+.card-front{
+    width: 290px;
+    height: 160px;
     position: absolute;
     z-index: 10;
-    top: 104px;
-    left: 10px;
-}
-
-.bg-card-front img{
-    width: 100%;
-    height: 100%;
+    top: 125px;
+    left: 15px;
+    background-image: url("images/bg-card-front.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .icono{
     position: absolute;
-    top: 20px;
-    left: 10px;
+    top: 10px;
+    left: 6px;
     z-index: 10;
+    margin: 0 auto;
+    transform: scale(.65);
 }
 
 .number-front-card{
     position: absolute;
-    top: 85px;
-    left: 20px;
+    text-align: center;
+    bottom: 50px;
     font-size: 20px;
     color: hsl(270, 3%, 87%);
     width: 100%;
-    /*letter-spacing: 1px;*/
 }
 
 .name-front-card{
     position: absolute;
     color: hsl(270, 3%, 87%);
-    bottom: 20px;
-    left: 20px;
-    font-size: 11px;
+    bottom: 25px;
+    left: 24px;
+    font-size: 9px;
 }
 
 .exp-date-front-card{
     position: absolute;
     color: hsl(270, 3%, 87%);
-    bottom: 20px;
-    right: 20px;
-    font-size: 12px;
+    bottom: 25px;
+    right: 24px;
+    font-size: 9px;
 }
 
 
 .campo{
-    margin: 20% 6% 5% 6%;
+    margin: 60px 6% 5% 6%;
     
 }
 
@@ -98,13 +109,17 @@ body{
 }
 
 .block input{
-
+    border: solid 1px;
     margin-top: 5px;
     margin-bottom: 15px;
     padding: 10px;
     border-radius: 10px;
     border-color: hsl(270, 3%, 87%);
 
+}
+
+.errors{
+    color: red;
 }
 
 .date-cvc{
@@ -114,7 +129,7 @@ body{
 .exp-date{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 50%;
 }
 
 .mm-yy{
@@ -125,13 +140,13 @@ body{
 
 .mm-yy input{
     width: 50%;
-    margin: 5px;
+    margin-right: 10px;
 }
 
 .cvc {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 50%;
 }
 
 .cvc input{
@@ -141,36 +156,95 @@ body{
 
 
 .button{
+    margin-top: 15px;
+    width: 100%;
     border: none;
     border-radius: 10px;
-    margin: 15px;
-    padding: 10px;
+    padding: 15px;
     color: hsl(270, 3%, 87%);
     background-color: hsl(278, 68%, 11%);
+}
+
+@media(min-width : 768px){
+    .bg-main-mobile{
+        height: 350px;
+    }
+
+    .card-front{
+        left: 123px;
+        top: 140px;
+    }
+
+    .card-back{
+        right: 123px;
+        top: 50px;
+    }
+
+    .campo{
+        margin-top: 5%;
+    }
 }
 
 @media(min-width : 1024px){
     main {
         display: flex;
+        justify-content: space-between
     }
-
-    .bg-main{
-        width: 50%;
-    }
-
     .bg-main-mobile{
         display: none;
     }
-
     .bg-main-desktop{
         display: block;
     }
 
+    .card-front{
+        top: 200px;
+        left: 165px;
+        transform: scale(1.2);
+    }
+
+    .card-back{
+        left: 230px;
+        top: 420px;
+        transform: scale(1.2);
+    }
+
+    .bg-main-desktop{
+        width: 100%;
+    }
+
+    .campo{
+        flex-grow: 1;
+        margin: auto;
+        margin-left: 90px;
+    }
+
     .block{
-        position: relative;
-        left: 10px;
-        display: flex;
+        width: 400px;
+    }
+
+}
+
+@media(min-width : 1440px){
+    .card-front{
+        top: 240px;
+        left: 250px;
+        transform: scale(1.5);
+    }
+
+    .card-back{
+        left: 320px;
+        top: 520px;
+        transform: scale(1.5);
+    }
+
+    .campo{
+        margin: auto;
+        margin-left: 350px;
+    }
+
+    .block{
         justify-content: center;
-        flex-direction: column;
+        width: 400px;
     }
 }
