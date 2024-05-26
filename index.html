@@ -18,14 +18,14 @@
       <div>
         <div class="card-back">
           <!--<img src="images\bg-card-back.png" alt="">-->
-          <p class="cvc-back-card">000</p>
+          <p class="cvc-back-card" id="code-card">000</p>
         </div>
         <div class="card-front">
           <!-- <img src="images\bg-card-front.png" alt=""> -->
           <svg class="icono" width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
-          <p class="number-front-card">0000 0000 0000 0000</p>
-          <p class="name-front-card">JANE APPLESEED</p>
-          <p class="exp-date-front-card">00/00</p>
+          <p class="number-front-card" id="number-card">0000 0000 0000 0000</p>
+          <p class="name-front-card" id="name-card">JANE APPLESEED</p>
+          <p class="exp-date-front-card" id="exp-card">00/00</p>
         </div>
       </div>
       
@@ -33,24 +33,24 @@
     <div class="campo">
       <form action="GET" class="block">
         <label for="name">CARDHOLDER NAME</label>
-        <input type="text" name="" id="name" placeholder="e.g. Jane Appleseed">
+        <input type="text" name="" id="name" placeholder="e.g. Jane Appleseed" oninput="actualizarTextoNombre()">
         <div id="errorName" class="errors"></div>
         <label for="cardNum">CARD NUMBER</label>
-        <input type="text" name="" id="cardNum" placeholder="e.g. 1234 5678 9123 0000">
+        <input type="text" name="" id="cardNum" placeholder="e.g. 1234 5678 9123 0000" maxlength="16" oninput="actualizarTextoNumeroTarjeta()">
         <div id="errorCardNum" class="errors"></div>
         <div class="date-cvc">
           <div class="exp-date">
             <label for="">EXP. DATE (MM/YY)</label>
             <div class="mm-yy">
-              <input type="text" name="" id="month" placeholder="MM">
+              <input type="text" name="" id="month" placeholder="MM" maxlength="2" oninput="actualizarTextoMes()">
               <div id="errorMonth" class="errors"></div>
-              <input type="text" name="" id="year" placeholder="YY">
+              <input type="text" name="" id="year" placeholder="YY" maxlength="4" oninput="actualizarTextoAnio()">
               <div id="errorYear" class="errors"></div>
             </div>
           </div>
           <div class="cvc">
             <label for="code">CVC</label>
-            <input type="text" name="" id="code" placeholder="e.g. 123">
+            <input type="text" name="" id="code" placeholder="e.g. 123" maxlength="3" oninput="actualizarTextoCodigo()">
             <div id="errorCode" class="errors"></div>
           </div>
         </div>
@@ -71,5 +71,6 @@
     Coded by <a href="#">Your Name Here</a>.
   </div>
   <script src="validations.js"></script>
+  <script src="functions.js"></script>
 </body>
 </html>
